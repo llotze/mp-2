@@ -13,7 +13,8 @@ const SingleUserDiv=styled.div<{gender: string}>`
     display: flex;
     flex-direction: column;   
     justify-content: center;
-    min-width: 300px;
+    min-width: 250px;
+    width: 300px;
     max-width: 30%;
     padding: 2%;
     margin: 1%;
