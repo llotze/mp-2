@@ -1,4 +1,4 @@
-import RandomUsers from "./components/RandomUser.tsx";
+import RandomUsers from "./components/RandomUsers.tsx";
 import styled from "styled-components";
 import {useEffect, useState} from "react";
 import type { RandomUser } from './interfaces/Characters';
