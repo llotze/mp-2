@@ -1,73 +1,89 @@
-# React + TypeScript + Vite
+# MP-2: Random User Display
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A React + TypeScript application that fetches and displays random user data with styled components.
 
-Currently, two official plugins are available:
+## Project Overview
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+This project demonstrates the single-tasking principle by separating data retrieval from UI rendering:
+- **Data Layer**: [`App.tsx`](projects/mini-projects/mp-2/src/App.tsx) handles API calls and state management
+- **UI Layer**: [`RandomUsers.tsx`](projects/mini-projects/mp-2/src/components/RandomUsers.tsx) renders the user interface
 
-## React Compiler
+## Features
 
-The React Compiler is currently not compatible with SWC. See [this issue](https://github.com/vitejs/vite-plugin-react/issues/428) for tracking the progress.
+- Fetches 6 random users from the [Random User API](https://randomuser.me/)
+- Displays user information including name, age, location, email, and phone
+- Gender-based color theming (blue for male, purple for female)
+- Responsive design with styled-components
+- TypeScript for type safety
 
-## Expanding the ESLint configuration
+## Tech Stack
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- **Frontend**: React 19, TypeScript
+- **Styling**: Styled Components
+- **Build Tool**: Vite
+- **API**: Random User API
+- **Deployment**: Vercel
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## Getting Started
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+### Prerequisites
+- Node.js (v18 or higher)
+- npm or yarn
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+### Installation
+
+1. Clone the repository
+```bash
+git clone https://github.com/llotze/mp-2
+cd mp-2
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+2. Install dependencies
+```bash
+npm install
 ```
+
+3. Start the development server
+```bash
+npm run dev
+```
+
+4. Open [http://localhost:5173](http://localhost:5173) in your browser
+
+## Available Scripts
+
+- `npm run dev` - Start development server
+- `npm run build` - Build for production
+- `npm run preview` - Preview production build
+- `npm run lint` - Run ESLint
+
+## Project Structure
+
+```
+src/
+├── components/
+│   └── RandomUsers.tsx      # UI component for displaying users
+├── interfaces/
+│   └── Characters.ts        # TypeScript interfaces
+├── App.tsx                  # Main component with data fetching
+└── main.tsx                # Application entry point
+```
+
+## Live Demo
+
+🔗 **[View Live Application](https://mp-2-eight-plum.vercel.app/)**
+
+## Author
+
+**Lucas Lotze**  
+📧 llotze@bu.edu  
+🐙 [GitHub Repository](https://github.com/llotze/mp-2)
+
+## Course Information
+
+Created for **CAS CS391** - Topics in Computer Science  
+Boston University, Fall 2025
+
+## License
+
+© 2025 Lucas Lotze. All rights reserved.
