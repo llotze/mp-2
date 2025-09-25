@@ -14,6 +14,7 @@ const SingleUserDiv=styled.div<{gender: string}>`
     flex-direction: column;   
     justify-content: center;
     min-width: 300px;
+    max-width: 30%;
     padding: 2%;
     margin: 1%;
     background-color: ${(props)=>(props.gender === "male" ? 'rgba(86, 104, 110, 1)' : 'rgba(104, 79, 107, 1)')};
